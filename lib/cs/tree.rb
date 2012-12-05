@@ -10,34 +10,16 @@ class Tree
   end
 
   def sort
+    $array = []
     start_sort(@root)
   end
 
-  def start_sort
+  def start_sort(node)
     start_sort(node.prv) if node.prv
-    puts node.data
+    $array << node.data
     start_sort(node.nxt) if node.nxt
   end
 
-def sort
-  if @root.nil?
-    []
-  else
-      sort_node(@root, [])
-    end
-end
-
- def sort_node(node, result)
-    if !node.prv.nil?
-      sort_node(node.prv, result)
-    end
-    
-    result << node.value
-    
-    if !node.nxt.nil?
-      sort_node(node.nxt, result)
-    end
-end
 
 
   def insert_node(node, value)
