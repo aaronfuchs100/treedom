@@ -10,14 +10,13 @@ class HomeController < ApplicationController
 	end
 
 	def sort
-		tree = Tree.new
+		@tree = Tree.new
 		$responses.each do |t|
-			tree.insert(t)
+			@tree.insert(t)
 		end
-		tree.sort
-		$responses = $array
-		
-		
+		@tree.sort
+		binding.pry
+
 	end
 
 

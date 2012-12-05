@@ -1,6 +1,3 @@
 $('#text').empty();
-
-<% $responses.each do |t| %>
-	$('#text').append('<%= t %> ');
-<% end %>
+$('#text').append('<%= @tree.array.to_sentence %>');
 

@@ -1,5 +1,5 @@
 class Tree
-  attr_accessor :root
+  attr_accessor :root, :array
 
   def insert(word)
     if @root.nil?
@@ -10,13 +10,13 @@ class Tree
   end
 
   def sort
-    $array = []
+    @array = []
     start_sort(@root)
   end
 
   def start_sort(node)
     start_sort(node.prv) if node.prv
-    $array << node.data
+    @array << node.data
     start_sort(node.nxt) if node.nxt
   end
 
